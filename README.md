@@ -18,7 +18,7 @@ En el apartado de /src/main se encuentra:
 ## ⚙️ Instalación y Configuración
 ### 1️⃣ Clonar el Repositorio
 ```bash
-git clone [https://github.com/silviac43/Mensajeria-Entornos-Backend.git](https://github.com/silviac43/Mensajeria-Entornos-Backend.git)
+git clone https://github.com/silviac43/Mensajeria-Entornos-Backend.git
 cd Mensajeria-Entornos-Backend
 ```
 ### 2️⃣ Configurar el Backend
