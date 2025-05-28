@@ -15,6 +15,12 @@ En el apartado de /src/main se encuentra:
 - schema.sql con el diseño de la base de datos.
 - data.sql con información para prueba de la aplicación.
 
+## 🔧 Requisitos Previos
+- Java 17 o superior
+- Maven 3.6+
+- MySQL 
+- IDE recomendado: VS Code
+
 ## ⚙️ Instalación y Configuración
 ### 1️⃣ Clonar el Repositorio
 ```bash
@@ -26,11 +32,29 @@ cd Mensajeria-Entornos-Backend
 ```bash
 mvn clean install
 ```
-2. Configurar la base de datos en `application.properties`.
+2. Configurar la base de datos en `application.properties` con tus datos.
+```bash
+spring.datasource.url=jdbc:mysql://localhost:3306/mensajeria
+spring.datasource.username=usuario
+spring.datasource.password=contraseña
+spring.jpa.hibernate.ddl-auto=update
+```
 3. Iniciar el servidor:
 ```bash
 mvn spring-boot:run
 ```
+## 📡 Principales Endpoints
+
+| Método(s)                           | Endpoint                  | Descripción                                   |
+|-------------------------------------|---------------------------|-----------------------------------------------|
+| `POST`, `PUT`, `GET`                | `/api/auth/`              | Autenticación y gestión de sesión de usuarios |
+| `POST`, `PUT`, `GET`, `DELETE`      | `/api/clientes`           | CRUD completo de clientes                     |
+| `POST`, `PUT`, `GET`, `DELETE`      | `/api/empresas`           | CRUD completo de empresas                     |
+| `GET`                               | `/api/historialpedido`    | Obtener historial de pedidos                  |
+| `POST`, `PUT`, `GET`, `DELETE`      | `/api/mensajeros`         | CRUD completo de mensajeros                   |
+| `POST`, `PUT`, `GET`, `DELETE`      | `/api/pedidos`            | CRUD completo de pedidos                      |
+| `POST`, `PUT`, `GET`, `DELETE`      | `/api/admin/user`         | Gestión administrativa de usuarios            |
+
 
 ## 💬 Autores
 - Dilan Esteban Rey Sepulveda - 2190397
