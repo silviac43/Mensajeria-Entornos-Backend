@@ -81,4 +81,17 @@ public class UserManagementController {
         List<Usuario> users = usuarioService.findUsersByRol(rol);
         return ResponseEntity.ok(users);
     }
+
+    // Restablecer contraseña de usuario (simulación)
+    @PutMapping("/reset-password/{id}")
+    public ResponseEntity<Void> resetPassword(@PathVariable Long id) {
+        try {
+            String nuevaPassword = usuarioService.resetPassword(id);
+            System.out.println("Contraseña restablecida para usuario ID " + id + ": " + nuevaPassword);
+            return ResponseEntity.noContent().build(); 
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
 }

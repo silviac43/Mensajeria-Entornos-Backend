@@ -52,6 +52,20 @@ public class UsuarioService implements UserDetailsService {
         return pass.toString();
     }
 
+    @Transactional
+    public String resetPassword(Long id) {
+        Usuario user = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado con id: " + id));
+        
+        String nuevaPassword = generarPasswordRandom(12);
+        user.setPassword(passwordEncoder.encode(nuevaPassword));
+        usuarioRepository.save(user);
+
+        System.out.println("Restablecida contraseña de " + user.getEmail() +
+            " con nueva contraseña temporal: " + nuevaPassword);
+
+        return nuevaPassword; 
+    }
 
     @Transactional(readOnly = true)
     public List<Usuario> findAllUsers() {
