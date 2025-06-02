@@ -64,6 +64,7 @@ public class ClienteService {
         cliente.setEmpresaMensajeria(clienteActualizado.getEmpresaMensajeria());
         cliente.setTelefonoEntrega(clienteActualizado.getTelefonoEntrega());
         cliente.setTelefonoRecogida(clienteActualizado.getTelefonoRecogida());
+        cliente.setDireccionRecogida(clienteActualizado.getDireccionRecogida());
         cliente.setDireccionEntrega(clienteActualizado.getDireccionEntrega());
         cliente.setEmail(clienteActualizado.getEmail());
         return clienteRepository.save(cliente);

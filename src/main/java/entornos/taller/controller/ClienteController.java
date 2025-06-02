@@ -129,7 +129,7 @@ public class ClienteController {
         } catch (Exception ex) {
             response.put("status", "error");
             response.put("message", "Error interno al actualizar el cliente");
-            return ResponseEntity.internalServerError().body(response); // 500
+            return ResponseEntity.internalServerError().body(response); 
         }
     }
 
